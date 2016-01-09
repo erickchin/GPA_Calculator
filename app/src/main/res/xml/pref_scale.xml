@@ -1,0 +1,9 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:title="A+"
+        android:key="A+"
+        android:defaultValue="4.33"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+</PreferenceScreen>
