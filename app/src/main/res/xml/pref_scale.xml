@@ -2,8 +2,85 @@
 
     <EditTextPreference
         android:title="A+"
-        android:key="A+"
+        android:key="grade_a_plus"
         android:defaultValue="4.33"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="A"
+        android:key="grade_a"
+        android:defaultValue="4.00"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="A-"
+        android:key="grade_a_minus"
+        android:defaultValue="3.67"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="B+"
+        android:key="grade_b_plus"
+        android:defaultValue="3.33"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="B"
+        android:key="grade_b"
+        android:defaultValue="3.00"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="B-"
+        android:key="grade_b_minus"
+        android:defaultValue="2.67"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="C+"
+        android:key="grade_c_plus"
+        android:defaultValue="2.33"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="C"
+        android:key="grade_c"
+        android:defaultValue="2.00"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="C-"
+        android:key="grade_c_minus"
+        android:defaultValue="1.67"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="D+"
+        android:key="grade_d_plus"
+        android:defaultValue="1.33"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="D"
+        android:key="grade_d"
+        android:defaultValue="1.00"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"/>
+
+    <EditTextPreference
+        android:title="D-"
+        android:key="grade_d_minus"
+        android:defaultValue="0.67"
         android:inputType="numberDecimal"
         android:selectAllOnFocus="true"/>
 </PreferenceScreen>

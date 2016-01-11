@@ -18,4 +18,8 @@
         <intent android:action="android.settings.SYNC_SETTINGS" />
     </Preference>
 
+    <Preference android:title="@string/pref_delete_data"
+        android:key="delete_data"
+        android:summary="Delete all courses and evaluations"/>
+
 </PreferenceScreen>
