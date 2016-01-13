@@ -28,7 +28,7 @@ public class OpenCourseActivity extends AppCompatActivity {
     private String mCourseCode;
     private String mCourseName;
     private CourseDatabaseHelper mCourseDH;
-    EvaluationDatabaseHelper mEvaluationDH;
+    private EvaluationDatabaseHelper mEvaluationDH;
 
     ArrayList<String> nameList = new ArrayList<String>();
     ArrayList<String> codeList = new ArrayList<String>();
@@ -44,6 +44,7 @@ public class OpenCourseActivity extends AppCompatActivity {
 
         mCourseDH = new CourseDatabaseHelper(this);
         mEvaluationDH = new EvaluationDatabaseHelper(this);
+
         // Receive passed on value
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -75,6 +76,7 @@ public class OpenCourseActivity extends AppCompatActivity {
         ListView listView = (ListView) this.findViewById(R.id.listview_evaluations);
         listView.setAdapter(mEvaluationAdapter);
 
+        // Deleting the evaluation in the list
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
                 mEvaluationDH.deleteData(nameList.get(position), codeList.get(position), markList.get(position), weightList.get(position));
@@ -98,12 +100,15 @@ public class OpenCourseActivity extends AppCompatActivity {
         getEvaluations();
     }
 
+    // Get all the evaluations for the course
     private void getEvaluations() {
+        // Reset all the lists
         mEvaluationAdapter.clear();
         nameList.clear();
         codeList.clear();
         markList.clear();
         weightList.clear();
+
         SQLiteDatabase db = mEvaluationDH.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT " + mEvaluationDH.COL_2 + ", " + mEvaluationDH.COL_3  + ", "  + mEvaluationDH.COL_4  + ", " + mEvaluationDH.COL_5 + " FROM " + mEvaluationDH.TABLE_NAME + " WHERE " + mEvaluationDH.COL_3 + "= '" + mCourseCode + "'", null);
         if (cursor != null) {
@@ -127,6 +132,7 @@ public class OpenCourseActivity extends AppCompatActivity {
         calculateAverage();
     }
 
+    // Calculates the total average of the course
     private void calculateAverage() {
         if (markList.size() == 0) {
             setTitle("[" + mCourseCode + "] " + mCourseName);

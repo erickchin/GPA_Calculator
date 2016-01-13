@@ -1,4 +1,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-
+    <Preference
+        android:selectable="false"
+        android:enabled="true"
+        android:key="version"
+        android:title="Version"
+        android:summary="@string/version_number" />
 </PreferenceScreen>

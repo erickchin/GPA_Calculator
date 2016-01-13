@@ -20,8 +20,6 @@ import com.example.erick.gpacalculator.fragments.GoalFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    CourseDatabaseHelper courseDb;
-    EvaluationDatabaseHelper evaluationDb;
     NavigationView navigationView = null;
     Toolbar toolbar = null;
 
@@ -29,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        courseDb = new CourseDatabaseHelper(this);
-        evaluationDb = new EvaluationDatabaseHelper(this);
 
         // Setup activity fragment to Courses page
         CoursesFragment fragment = new CoursesFragment();
@@ -77,8 +73,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
@@ -97,17 +91,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_goals) {
+        }
+        else if (id == R.id.nav_goals) {
             GoalFragment fragment = new GoalFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
-
+        else if (id == R.id.nav_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

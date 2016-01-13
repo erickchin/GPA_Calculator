@@ -1,17 +1,13 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- These settings headers are only used on tablets. -->
-
     <header
         android:fragment="com.example.erick.gpacalculator.activity.SettingsActivity$GradePreferenceFragment"
-        android:icon="@drawable/ic_menu_manage"
+        android:icon="@drawable/ic_font_download_black_24dp"
         android:title="@string/pref_header_scale" />
 
     <header
-        android:fragment="com.example.erick.gpacalculator.activity.SettingsActivity$DataSyncPreferenceFragment"
-        android:icon="@drawable/ic_sync_black_24dp"
-        android:title="@string/pref_header_data_sync" />
-
+        android:fragment="com.example.erick.gpacalculator.activity.SettingsActivity$DataPreferenceFragment"
+        android:icon="@drawable/ic_loop_black_24dp"
+        android:title="@string/pref_header_data" />
     <header
         android:fragment="com.example.erick.gpacalculator.activity.SettingsActivity$AboutPreferenceFragment"
         android:icon="@drawable/ic_info_black_24dp"
